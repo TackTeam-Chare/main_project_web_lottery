@@ -1,0 +1,57 @@
+/* lottery-detail.component.css */
+
+/* ตัวอย่าง CSS สำหรับ lottery-detail.component.css */
+
+/* ตั้งค่าขนาดของ Dialog */
+:host {
+    display: block;
+    width: 100%;
+    max-width: 400px; /* ปรับขนาด Dialog ตามที่คุณต้องการ */
+    margin: 0 auto; /* จัดกึ่งกลางในหน้าจอ */
+    padding: 16px;
+    background-color: #f5f5f5; /* สีพื้นหลังของ Dialog */
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* เงาเริ่มต้น */
+  }
+  
+  /* ส่วนหัวของ Dialog */
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #333; /* สีข้อความในหัวของ Dialog */
+  }
+  
+  /* ส่วนเนื้อหาของ Dialog */
+  mat-dialog-content {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    background-color: #fff; /* สีพื้นหลังของเนื้อหา */
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* เงาเริ่มต้น */
+  }
+  
+  /* ส่วนของปุ่มปิด */
+  mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* ปุ่มปิด */
+  button[mat-button] {
+    font-size: 1rem;
+    padding: 8px 16px;
+    background-color: #007bff; /* สีพื้นหลังปุ่ม */
+    color: #fff; /* สีข้อความในปุ่ม */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* ปุ่มปิด (เมื่อโฮเวอร์) */
+  button[mat-button]:hover {
+    background-color: #0056b3; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+  }

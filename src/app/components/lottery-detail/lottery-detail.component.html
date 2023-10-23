@@ -1,0 +1,21 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&display=swap");
+</style>
+<h2 mat-dialog-title style="font-family: 'Noto Sans Thai', sans-serif;
+  font-family: 'Noto Sans Thai Looped', sans-serif; font-weight: 800; color: #000000;">รายละเอียดสลาก</h2>
+<div mat-dialog-content>
+  <p style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif; font-weight: 900; color: #1d1d1d;">เลขฉลาก: {{ lotteries.ticket_number }}</p>
+  <p style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif; font-weight: 900; color: #333;">งวดที่: {{ lotteries.period }}</p>
+  <p style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif; font-weight: 900; color: #333;"> ชุด: {{ lotteries.set_number }}</p>
+  <p style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif; font-weight: 900; color: #333;">ราคา: {{ lotteries.price }}</p>
+  <p style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif; font-weight: 900; color: #333;">จำนวน: {{ lotteries.quantity }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif; font-weight: 800; background-color: #007bff; color: #fff;">ปิด</button>
+</div>

@@ -1,0 +1,121 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&display=swap");
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="content">
+  <div class="flex-container">
+    <div class="input-box">
+      <input
+        matInput
+        [placeholder]="'' + index"
+        maxlength="1"
+        *ngFor="let index of [1, 2, 3, 4, 5, 6]; let i = index"
+        style="
+          margin-right: 15px;
+          font-family: 'Noto Sans Thai', sans-serif;
+          font-family: 'Noto Sans Thai Looped', sans-serif;
+        "
+        [name]="'input' + i"
+        #inputElement
+      />
+    </div>
+    <button
+      mat-raised-button
+      color="warn" class="search"
+      style=" 
+        margin-right: 15px;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Noto Sans Thai Looped', sans-serif;
+      "
+      (click)="search(getInputValues())"
+    >
+      <mat-icon>search</mat-icon>ค้นหา
+    </button>
+    <button
+mat-raised-button
+color="primary"
+style="margin-right: 15px; font-family: 'Noto Sans Thai', sans-serif; font-family: 'Noto Sans Thai Looped', sans-serif;"
+(click)="resetSearch()"
+>
+<mat-icon>refresh</mat-icon>รีเซ็ตการค้นหา
+</button>
+    <div class="period form-group">
+      <label for="period">งวดที่ <span>*</span></label>
+      <select [(ngModel)]="period" (change)="onPeriodSelect()" class="form-select" name="period">
+
+        <option disabled="disabled" value=""></option>
+        <option *ngFor="let periodItem of periodList" [value]="periodItem">{{ periodItem }}</option>
+      </select>
+    </div>
+    
+    <div class="set form-group">
+      <label for="set_number">ชุดที่ <span>*</span></label>
+      <select [(ngModel)]="set_number" (change)="onSet_numberSelect()" class="form-select" name="set_number">
+
+        <option disabled="disabled" value=""></option>
+        <option *ngFor="let set_number of set_numberList" [value]="set_number">{{ set_number }}</option>
+      </select>
+    </div>
+    
+    
+
+
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutGap="66px">
+    <div
+      fxFlex="20%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let result of lotteryResults"
+    >
+      <mat-card class="mat-elevation-z4" id="fxLayout">
+        <mat-card-header>
+          <mat-card-title>สลากกินแบ่ง</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="info-box">
+            <p class="info-text">
+              หมายเลขสลาก : <span>{{ result.ticket_number }}</span>
+            </p>
+            <p class="left-align">
+              งวดที่ : {{ result.period }}
+              <span class="right-align">ชุด : {{ result.set_number }} </span>
+            </p>
+            <p class="left-align">ราคา : {{ result.price }}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions class="card-actions">
+          <button class="button-looks"
+            mat-flat-button
+            color="primary"
+            (click)="openLotteryDetailDialog(result)"
+          >
+            <mat-icon>looks</mat-icon>ดูสลาก
+          </button>
+          <button
+            mat-flat-button
+            color="accent"
+            (click)="addToCart(result)"
+            *ngIf="lotteryService.isLoggedIn"
+          >
+            <mat-icon>add_shopping_cart</mat-icon>ใส่ตะกร้า
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <p-toast position="top-right"></p-toast>
+
+
+
+    <div *ngIf="lotteryResults.length === 0" class="no-results">
+      ไม่พบสลากที่ค้นหา
+    </div>
+    <div *ngIf="hasSearchResults" class="search-results">
+      <p>พบผลลัพธ์ {{ lotteryResults.length }} รายการ</p>
+    </div>
+    
+  </div>
+
+</div>
+

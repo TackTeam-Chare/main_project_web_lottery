@@ -1,0 +1,73 @@
+<!-- admin-edit.component.html -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&family=Sarabun:ital,wght@1,500;1,800&family=Taviraj&display=swap');
+  </style>
+  <h2 mat-dialog-title class="mat-dialog-title-custom" style="font-family: 'Charm', cursive;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-family: 'Noto Sans Thai Looped', sans-serif;
+  font-family: 'Sarabun', sans-serif;
+  font-family: 'Taviraj', serif;">เพิ่มสลาก</h2>
+  <div mat-dialog-content class="mat-dialog-content-custom">
+    <mat-form-field class="mat-form-field-custom">
+      <label for="ticket_number">หมายเลขสลาก</label>
+      <input
+        type="number"
+        matInput
+    #ticket_number
+        name="ticket_number"
+    
+      />
+    </mat-form-field>
+  
+    <mat-form-field class="mat-form-field-custom">
+      <label for="period">งวด</label>
+      <input
+        type="number"
+        matInput
+      #period
+        name="period"
+      
+      />
+    </mat-form-field>
+  
+    <mat-form-field class="mat-form-field-custom">
+      <label for="set_number">ชุด</label>
+      <input
+        type="number"
+        matInput
+     #set_number
+        name="set_number"
+     
+      />
+    </mat-form-field>
+     <mat-form-field class="mat-form-field-custom">
+      <label for="quantity">จำนวนบัตรสลาก</label>
+      <input
+        type="number"
+        matInput
+     #quantity
+        name="quantity"
+       
+      />
+    </mat-form-field>
+    <mat-form-field class="mat-form-field-custom">
+      <label for="price">ราคา</label>
+      <input
+        type="number"
+        matInput
+     #price
+        name="price"
+       
+      />
+    </mat-form-field>
+    <button mat-flat-button color="accent" style="font-family: 'Charm', cursive;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    font-family: 'Sarabun', sans-serif;
+    font-family: 'Taviraj', serif;" (click)="addNew(ticket_number.value, price.value, period.value,+ set_number.value,+ quantity.value)"> 
+      <mat-icon>edit</mat-icon>เพิ่มข้อมูล
+    </button>
+    
+    
+  </div>
+  

@@ -1,0 +1,39 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@800;900&family=Noto+Sans+Thai:wght@300;400;900&display=swap');
+</style>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="line-spin-fade"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="fxLayout" id="div-body">
+  <mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title class="fxLayout" id="card-title" >
+        <mat-icon>lock</mat-icon>
+        ล็อคอิน
+      </mat-card-title>
+      <mat-card-subtitle>กรุณาใส่อีเมล์เเละรหัสผ่าน</mat-card-subtitle>
+    </mat-card-header>
+    <!-- ส่วนของแบบฟอร์ม -->
+    <div class="fxLayout" id="div-form">
+      <div class="fxLayout" id="div-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>อีเมล์</mat-label>
+          <input type="email" matInput #email  required/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>รหัสผ่าน</mat-label>
+          <input type="password" matInput #password required/>
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-card-actions class="fxLayout" id="card-actions">
+      <button mat-flat-button class="signup-button" routerLink="/register"><mat-icon>person_add</mat-icon> สมัครสมาชิก</button>
+      <button mat-flat-button color="primary" class="login-button" (click)="login(email.value,password.value)"><mat-icon>login</mat-icon> ล็อคอิน</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,26 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar {
+    background-color: #1976D2; /* เปลี่ยนสีพื้นหลังของ Toolbar */
+    color: #fff; /* เปลี่ยนสีข้อความบน Toolbar เป็นขาว */
+  }
+  
+/* lottery-search.component.css */
+.toolbar-title {
+  /* ใช้ Flexbox เพื่อจัดให้ข้อความอยู่ตรงกลางใน toolbar */
+  flex-grow: 1;
+  display: flex;
+  justify-content: left;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-family: 'Noto Sans Thai Looped', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@800;900&family=Noto+Sans+Thai:wght@300;400;900&display=swap');
+  .main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  } 
+  

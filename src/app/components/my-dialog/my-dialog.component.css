@@ -1,0 +1,32 @@
+/* styles.css */
+
+/* ปรับแต่งหัวเรื่องของ Dialog Title */
+.custom-dialog-title {
+    font-size: 24px;
+    text-align: center;
+    color: #333; /* สีข้อความ */
+  }
+  
+  /* ปรับแต่งเนื้อหาของ Dialog Content */
+  .custom-dialog-content {
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0; /* ระยะห่างด้านบนและด้านล่าง */
+  }
+  
+  /* ปรับแต่งปุ่มใน Dialog Actions */
+  .custom-dialog-button {
+    background-color: #007bff; /* สีพื้นหลังปุ่ม */
+    color: white; /* สีข้อความ */
+    border: none;
+    padding: 10px 20px; /* ขนาดของปุ่ม */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s; /* เพิ่มเอฟเฟค Hover */
+  }
+  
+  .custom-dialog-button:hover {
+    background-color: #0056b3; /* สีพื้นหลังปุ่มเมื่อ Hover */
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&display=swap");

@@ -1,0 +1,208 @@
+/* CSS สำหรับตะกร้าสลากที่สวยงามและทันสมัย */
+
+.cart {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button.clear-button {
+  background-color: #dc3545;
+}
+
+button.back-button {
+  background-color: #28a745;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.summary {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.summary p {
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.summary p:last-child {
+  font-weight: bold;
+}
+
+/* cart.component.css */
+
+/* ... สไตล์เก่า ... */
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.increment-button,
+.decrement-button {
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.quantity {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.increment-button:hover,
+.decrement-button:hover {
+  background-color: #218838;
+}
+
+/* CSS สำหรับปุ่ม "ลบ" และ "เพิ่ม" */
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-right: 5px; /* เพิ่มระยะห่างด้านขวาของปุ่ม */
+}
+
+/* CSS สำหรับปุ่ม "เพิ่ม" */
+button.increment-button {
+  background-color: #28a745;
+}
+
+/* CSS สำหรับปุ่ม "ลบ" */
+button.remove-button {
+  background-color: #dc3545;
+}
+
+/* CSS สำหรับปุ่ม "เพิ่ม" และ "ลบ" ในสถานะ hover */
+button.increment-button:hover,
+button.remove-button:hover {
+  background-color: #218838;
+}
+.cart-controls {
+  display: flex;
+  justify-content: flex-end; /* จัดการตำแหน่งชิดขวา */
+  margin-top: 10px; /* ห่างจากส่วนอื่น ๆ ด้านบน */
+}
+
+.back-button {
+  /* สไตล์ของปุ่ม "กลับไปยังหน้าค้นหา" */
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #218838;
+}
+
+th {
+  font-family: "Noto Sans Thai", sans-serif;
+  font-family: "Noto Sans Thai Looped", sans-serif;
+  font-family: "Sarabun", sans-serif;
+  font-family: "Taviraj", serif;
+}
+h2 {
+  font-family: "Noto Sans Thai", sans-serif;
+  font-family: "Noto Sans Thai Looped", sans-serif;
+  font-family: "Sarabun", sans-serif;
+  font-family: "Taviraj", serif;
+  text-align: center;
+}
+p {
+  font-family: "Noto Sans Thai", sans-serif;
+  font-family: "Noto Sans Thai Looped", sans-serif;
+  font-family: "Sarabun", sans-serif;
+  font-family: "Taviraj", serif;
+}
+button.back-button {
+  font-family: "Noto Sans Thai", sans-serif;
+  font-family: "Noto Sans Thai Looped", sans-serif;
+  font-family: "Sarabun", sans-serif;
+  font-family: "Taviraj", serif;
+}
+button.clear-button{
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    font-family: 'Sarabun', sans-serif;
+    font-family: 'Taviraj', serif;
+}
+.custom-snackbar {
+  background-color: #333; /* สีพื้นหลังของ Snackbar */
+  color: #fff; /* สีข้อความใน Snackbar */
+  text-align: center; /* จัดข้อความกลาง */
+  border-radius: 8px; /* ขอบมนของ Snackbar */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เงาสำหรับ Snackbar */
+}
+
+ 
+#p-confirmDialog{
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-family: 'Noto Sans Thai Looped', sans-serif;
+  font-family: 'Sarabun', sans-serif;
+  font-family: 'Taviraj', serif;
+}

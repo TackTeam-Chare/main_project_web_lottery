@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@800;900&family=Noto+Sans+Thai:wght@500;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <mat-toolbar color="primary" class="mat-elevation-z8">
+      <button  (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span id="text-span"
+        style="
+          font-family: 'Noto Sans Thai', sans-serif;
+          font-family: 'Noto Sans Thai Looped', sans-serif;
+        "
+        >ระบบจำหน่ายสลากดิจิทัล Online ยินดีต้อนรับคุณ  {{this.memberName}}</span
+      >
+      <span class="example-spacer"></span>
+ 
+    </mat-toolbar>
+ 
+
+
+    <mat-drawer-container autosize>
+      <mat-drawer #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+       
+          <mat-list-item>
+            <button
+            routerLink="table"
+            mat-button
+            style="
+              font-family: 'Noto Sans Thai', sans-serif;
+              font-family: 'Noto Sans Thai Looped', sans-serif;
+            "
+            routerLink="/cart"
+          >
+            <mat-icon>list_alt</mat-icon>ตะกร้าสลาก
+            <mat-badge [matBadge]="calculateTotalItems()" color="accent"></mat-badge>
+          </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button
+              routerLink="table"
+              mat-button
+              style="
+                font-family: 'Noto Sans Thai', sans-serif;
+                font-family: 'Noto Sans Thai Looped', sans-serif;
+               "  routerLink="/purchase-history"
+            >
+              <mat-icon>list_alt</mat-icon>ข้อมูลการซื้อย้อนหลัง
+            </button>
+          </mat-list-item>
+        
+          <mat-list-item>
+            <button
+  mat-button
+  style="
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+  "
+  (click)="logout()"
+  *ngIf="isUserLoggedIn"
+>
+  <mat-icon>exit_to_app</mat-icon> ออกจากระบบ
+</button>
+
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-drawer>
+      
+
+      <mat-drawer-content>
+        <div style="text-align: center; min-height: 600px">
+          <router-outlet>
+           
+            <app-lottery-search></app-lottery-search>
+         
+            </router-outlet>
+        </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+    <p-toast position="top-right"></p-toast>
+  </body>
+</html>

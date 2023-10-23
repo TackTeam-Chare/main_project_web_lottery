@@ -1,0 +1,90 @@
+.sidenav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.sidenav-content {
+  width: 85%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+#months {
+  margin-left: 50px;
+}
+
+#year {
+  margin-left: 50px;
+}
+.no-results-message {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  margin-top: 20px;
+  /* เพิ่มสไตล์ CSS อื่น ๆ ตามต้องการ */
+}
+.search-results-message {
+  text-align: center;
+  font-weight: bold;
+  color: green;
+  margin-top: 10px;
+  
+}
+ /* สไตล์สำหรับหัวเรื่อง */
+ h1 {
+  font-size: 24px;
+  color: #333131; /* สีตัวอักษร */
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* สไตล์สำหรับปุ่มค้นหา */
+.search-button button {
+  background-color: #007bff; /* สีพื้นหลังปุ่ม */
+  color: #fff; /* สีตัวอักษร */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.search-button button:hover {
+  background-color: #0056b3; /* สีพื้นหลังปุ่มเมื่อเมาส์ hover หน้าปุ่ม */
+}
+
+/* สไตล์ปุ่มรีเซ็ต */
+#reset {
+ margin-left: 20px;
+}
+
+/* ปรับสีพื้นหลังและสีข้อความของปุ่มรีเซ็ต */
+.p-button-secondary {
+  background-color: #ccc; /* สีพื้นหลังเมื่อปกติ */
+  color: #000; /* สีข้อความเมื่อปกติ */
+}
+
+.p-button-secondary:hover {
+  background-color: #999; /* สีพื้นหลังเมื่อโฮเวอร์ */
+  color: #fff; /* สีข้อความเมื่อโฮเวอร์ */
+}
+.search-field{
+  margin-left: 70px;
+}

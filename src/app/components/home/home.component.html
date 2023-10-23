@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@800;900&family=Noto+Sans+Thai:wght@500;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <mat-toolbar color="primary" class="mat-elevation-z8">
+      <button  (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span id="text-span"
+        style="
+          font-family: 'Noto Sans Thai', sans-serif;
+          font-family: 'Noto Sans Thai Looped', sans-serif;
+        "
+        >ระบบจำหน่ายสลากดิจิทัล Online</span
+      >
+      <span class="example-spacer"></span>
+      <button
+       
+        mat-button
+        style="
+          margin-right: 40px;
+          font-family: 'Noto Sans Thai', sans-serif;
+          font-family: 'Noto Sans Thai Looped', sans-serif;
+        " (click)="refreshPage()" 
+      ><mat-icon>home</mat-icon>
+        หน้าเเรก
+      </button>
+
+   
+      <button
+        mat-raised-button
+        color="accent"
+        style="
+          margin-right: 15px;
+          font-family: 'Noto Sans Thai', sans-serif;
+          font-family: 'Noto Sans Thai Looped', sans-serif;
+        "
+        [routerLink]="['/login']"
+       
+    
+      ><mat-icon>login</mat-icon>
+        เข้าสู่ระบบ
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        style="
+          font-family: 'Noto Sans Thai', sans-serif;
+          font-family: 'Noto Sans Thai Looped', sans-serif;
+        "
+        [routerLink]="['/register']"
+        routerLinkActive="router-link-active"
+    
+      ><mat-icon>person_add</mat-icon>
+        สมัครสมาชิก
+      </button>
+   
+        
+    </mat-toolbar>
+ 
+
+
+    <mat-drawer-container autosize>
+      <mat-drawer #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+          <!-- <mat-list-item>
+            <button
+              routerLink="/dashboard"
+              mat-button
+              style="
+                font-family: 'Noto Sans Thai', sans-serif;
+                font-family: 'Noto Sans Thai Looped', sans-serif;
+              " 
+            >
+              <mat-icon>dashboard</mat-icon> Dashboard(Admin)
+            </button>
+          </mat-list-item> -->
+          <mat-list-item>
+            <button
+              routerLink=""
+              mat-button
+              style="
+                font-family: 'Noto Sans Thai', sans-serif;
+                font-family: 'Noto Sans Thai Looped', sans-serif;
+              "  (click)="account_login()"
+            >
+              <mat-icon>account_circle</mat-icon> ข้อมูลส่วนตัว
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button
+              routerLink=""
+              mat-button
+              style="
+                font-family: 'Noto Sans Thai', sans-serif;
+                font-family: 'Noto Sans Thai Looped', sans-serif;
+              "  (click)="account_login()"
+            >
+              <mat-icon>shopping_cart</mat-icon> คำสั่งซื้อ
+            </button>
+          </mat-list-item>
+
+          <mat-list-item>
+            <button
+              routerLink="table"
+              mat-button
+              style="
+                font-family: 'Noto Sans Thai', sans-serif;
+                font-family: 'Noto Sans Thai Looped', sans-serif;
+              "  (click)="account_login()"
+            >
+              <mat-icon>list_alt</mat-icon>ตะกร้า
+            </button>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-drawer>
+      
+
+      <mat-drawer-content>
+        <div style="text-align: center; min-height: 600px">
+          <router-outlet>
+           
+            <app-lottery-search></app-lottery-search>
+        
+            </router-outlet>
+        </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+   
+  </body>
+</html>

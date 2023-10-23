@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: 'Roboto', 'Charm', 'Itim', 'Mitr', 'Noto Sans Thai', 'Noto Sans Thai Looped', 'Pattaya', 'Sarabun', 'Sriracha', 'Taviraj', sans-serif;
+}
+
+/* Add this to your styles.css or equivalent file */
+@import 'primeng/resources/themes/saga-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
+
+  @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Itim&family=Mitr:wght@400;500&family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&family=Pattaya&family=Sarabun:ital,wght@0,700;1,500;1,800&family=Sriracha&family=Taviraj&display=swap');

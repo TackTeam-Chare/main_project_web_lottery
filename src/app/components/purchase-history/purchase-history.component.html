@@ -1,0 +1,59 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Itim&family=Mitr:wght@400;500&family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&family=Pattaya&family=Sarabun:ital,wght@0,700;1,500;1,800&family=Sriracha&family=Taviraj&display=swap');
+</style>
+<div class="sidenav-container">
+  <div class="sidenav">
+    <!-- Sidebar Content -->
+  </div>
+  <div class="sidenav-content">
+    <h1>คำสั่งซื้อย้อนหลัง</h1>
+    <div class="search-container">
+      <div class="search-field">
+        <p-calendar [(ngModel)]="selectedDate" [showIcon]="true" placeholder="เลือกวันที่"></p-calendar>
+      </div>
+      <div class="search-button" id="search">
+        <button pButton type="button" label="ค้นหา" class="p-button-raised p-button-primary" (click)="filterData()" style="font-family: 'Itim', cursive; font-family: 'Mitr', sans-serif; font-family: 'Noto Sans Thai', sans-serif; font-family: 'Noto Sans Thai Looped', sans-serif; font-family: 'Pattaya', sans-serif; font-family: 'Sarabun', sans-serif; font-family: 'Sriracha', cursive; font-family: 'Taviraj', serif;"></button>
+      </div>
+  
+    
+      <div class="search-button" id="reset">
+        <button pButton type="button" label="Reset" class="p-button-raised p-button-secondary" (click)="resetSearch()" style="font-family: 'Itim', cursive; font-family: 'Mitr', sans-serif; font-family: 'Noto Sans Thai', sans-serif; font-family: 'Noto Sans Thai Looped', sans-serif; font-family: 'Pattaya', sans-serif; font-family: 'Sarabun', sans-serif; font-family: 'Sriracha', cursive; font-family: 'Taviraj', serif;"></button>
+      </div>
+    </div>
+
+    <p-table [value]="Results" [paginator]="true" [rows]="5" [responsive]="true" [style]="{'margin-top': '20px'}">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>วันที่ซื้อ</th>
+          <th>ชื่อ</th>
+          <th>หมายเลขสลาก</th>
+          <th>จำนวน</th>
+          <th>ราคาต่อใบ</th>
+          <th>ราคารวม</th>
+     
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>{{ item.created_at }}</td>
+          <td>{{ item.first_name }}</td>
+          <td>{{ item.ticket_number }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.price * item.quantity }} บาท</td>
+        
+        </tr>
+      </ng-template>
+    </p-table>
+    <div class="summary">
+      <p>จำนวนบัตรสลาก: {{ calculateTotalItems() }}</p>
+      <p>ราคารวม: {{ calculateTotalPrice() }} บาท</p>
+    </div>
+
+    <div class="cart-controls">
+      <button class="back-button" (click)="goToSearch()">
+      back
+      </button>
+    </div>
+  </div>
+</div>

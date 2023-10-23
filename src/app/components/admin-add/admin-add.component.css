@@ -1,0 +1,79 @@
+/* styles.css (หรือ styles.scss) */
+
+/* ปรับแต่งสไตล์สำหรับหัวของฟอร์ม */
+.mat-dialog-title-custom {
+    color: #000000; /* เปลี่ยนสีข้อความหัวของฟอร์ม */
+    font-size: 24px; /* เปลี่ยนขนาดตัวอักษรของหัวของฟอร์ม */
+    text-align: center; /* จัดตำแหน่งข้อความตรงกลาง */
+    margin-bottom: 20px; /* กำหนดระยะห่างด้านล่างของหัวของฟอร์ม */
+  }
+  
+  /* ปรับแต่งสไตล์สำหรับเนื้อหาของฟอร์ม */
+  .mat-dialog-content-custom {
+    background-color: #f5f5f5; /* เปลี่ยนสีพื้นหลังของเนื้อหาฟอร์ม */
+    padding: 20px; /* กำหนดระยะห่างขอบของเนื้อหาฟอร์ม */
+  }
+  
+  /* ปรับแต่งสไตล์สำหรับฟิลด์ของฟอร์ม */
+  .mat-form-field-custom {
+    width: 100%; /* กำหนดความกว้างเต็มหน้าจอ */
+    margin-bottom: 20px; /* กำหนดระยะห่างระหว่างฟิลด์ */
+  }
+  
+  /* ปรับแต่งสไตล์สำหรับป้ายชื่อของฟิลด์ */
+  .mat-form-field-label {
+    color: #333; /* เปลี่ยนสีของป้ายชื่อฟิลด์ */
+  }
+  
+  /* ปรับแต่งสไตล์สำหรับข้อความในฟิลด์ */
+  .mat-input-element {
+    color: #333; /* เปลี่ยนสีของข้อความในฟิลด์ */
+  }
+  
+  /* ปรับแต่งสไตล์สำหรับปุ่มบันทึก */
+  .mat-button-custom {
+    background-color: #007bff; /* เปลี่ยนสีพื้นหลังของปุ่ม */
+    color: #fff; /* เปลี่ยนสีข้อความบนปุ่ม */
+    font-size: 18px; /* เปลี่ยนขนาดตัวอักษรของปุ่ม */
+    padding: 10px 20px; /* กำหนดระยะห่างแนวนอนและแนวตั้งของปุ่ม */
+    border: none; /* ลบเส้นขอบของปุ่ม */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นตัวชี้ */
+  }
+  
+  /* ปรับแต่งสไตล์สำหรับปุ่มเมื่อเม้าส์ไปชี้ */
+  .mat-button-custom:hover {
+    background-color: #0056b3; /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อ hover */
+  }
+ 
+
+/* ซ่อนปุ่มลูกศรใน Input Fields ประเภทตัวเลข */
+.mat-form-field-custom input::-webkit-outer-spin-button,
+.mat-form-field-custom input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.mat-form-field-custom input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+.mat-form-field-custom label {
+    font-size: 18px; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้นตามที่คุณต้องการ */
+    font-weight: bold; /* ปรับความหนาของตัวอักษร */
+  }
+  h2{
+    font-family: 'Charm', cursive;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    font-family: 'Sarabun', sans-serif;
+    font-family: 'Taviraj', serif;
+  }
+  label{
+    font-family: 'Charm', cursive;
+font-family: 'Noto Sans Thai', sans-serif;
+font-family: 'Noto Sans Thai Looped', sans-serif;
+font-family: 'Sarabun', sans-serif;
+font-family: 'Taviraj', serif;
+  }

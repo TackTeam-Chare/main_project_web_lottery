@@ -1,0 +1,53 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&family=Sarabun:ital,wght@1,500;1,800&family=Taviraj&display=swap');
+</style>
+<div class="cart">
+  <h2>ตะกร้าสลาก</h2>
+  <table>
+    <thead>
+      <tr>
+        <th >เลขฉลาก</th>
+        <th>งวดที่</th>
+        <th>ชุด</th>
+        <th>ราคา</th>
+        <th>จำนวน</th>
+        <th>การดำเนินการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems">
+        <td>{{ item.ticket_number }}</td>
+        <td>{{ item.period }}</td>
+        <td>{{ item.set_number }}</td>
+        <td>{{ item.price }}</td>
+        <td>
+          {{ item.quantity }}
+        </td>
+        <td>
+          <button (click)="decrementQuantity(item)">-</button>
+          <button (click)="incrementQuantity(item)">+</button>
+          <button (click)="removeFromCart(item)">ลบ</button>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="summary">
+    <p>จำนวนบัตรสลาก: {{ calculateTotalItems() }}</p>
+    <p>ราคารวม:  {{ calculateTotalPrice() }} บาท</p>
+  </div>
+  <div class="cart-controls">
+    <button class="clear-button" (click)="clearCart()">ลบทั้งหมด</button>
+  </div>
+  <div class="cart-controls">
+    <button class="hover" (click)="confirmCart()">ซื้อสลาก</button>
+  </div>
+  <div class="cart-controls">
+    <button class="back-button" (click)="goToSearch()">กลับไปยังหน้าค้นหา</button>
+  </div>
+  <!-- เรียกใช้งาน Dialog ของ PrimeNG ใน tag p-confirmDialog -->
+<p-confirmDialog  id="p-confirmDialog" header="ยืนยันการสั่งซื้อ" icon="pi pi-exclamation-triangle" [style]="{ width: '350px' }"></p-confirmDialog>
+<p-toast position="top-left"></p-toast>
+
+
+</div>

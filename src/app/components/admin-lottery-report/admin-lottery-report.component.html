@@ -1,0 +1,85 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Itim&family=Mitr:wght@400;500&family=Noto+Sans+Thai+Looped:wght@400;800;900&family=Noto+Sans+Thai:wght@300;400;900&family=Pattaya&family=Sarabun:ital,wght@0,700;1,500;1,800&family=Sriracha&family=Taviraj&display=swap');
+</style>
+<div class="sidenav-container">
+  <div class="sidenav">
+    <!-- Sidebar Content -->
+  </div>
+  <div class="sidenav-content">
+    <h1>รายงานข้อมูลการซื้อสลาก ประจำวัน - ประจำเดือน</h1>
+    <div class="search-container">
+      <div class="search-field">
+        <p-calendar [(ngModel)]="selectedDate" [showIcon]="true" placeholder="เลือกวันที่"  ></p-calendar>
+
+      </div>
+      <div class="search-button" id="search">
+        <button pButton type="button" label="ค้นหา" class="p-button-raised p-button-primary" (click)="filterData()"style="font-family: 'Itim', cursive;
+        font-family: 'Mitr', sans-serif;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Noto Sans Thai Looped', sans-serif;
+        font-family: 'Pattaya', sans-serif;
+        font-family: 'Sarabun', sans-serif;
+        font-family: 'Sriracha', cursive;
+        font-family: 'Taviraj', serif;"></button>
+      </div>
+      <div class="search-field" id="months">
+        <p-dropdown [options]="months" [(ngModel)]="selectedMonth" placeholder="เลือกเดือน"></p-dropdown>
+      </div>
+      <div class="search-field" id="year">
+        <p-inputNumber [(ngModel)]="selectedYear" placeholder="ปี" [showButtons]="true" [minFractionDigits]="0" [maxFractionDigits]="0"></p-inputNumber>
+      </div>
+      <div class="search-button" id="search">
+        <button pButton type="button" label="ค้นหาด้วยเดือน" class="p-button-raised p-button-primary" (click)="filterDataByMonthYear()" style="font-family: 'Itim', cursive;
+        font-family: 'Mitr', sans-serif;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Noto Sans Thai Looped', sans-serif;
+        font-family: 'Pattaya', sans-serif;
+        font-family: 'Sarabun', sans-serif;
+        font-family: 'Sriracha', cursive;
+        font-family: 'Taviraj', serif;"></button>
+      </div>
+        <!-- เพิ่มปุ่ม Reset ด้านบน -->
+        <div class="search-button" id="reset">
+          <button pButton type="button" label="Reset" class="p-button-raised p-button-secondary" (click)="resetSearch()" style="font-family: 'Itim', cursive;
+          font-family: 'Mitr', sans-serif;
+          font-family: 'Noto Sans Thai', sans-serif;
+          font-family: 'Noto Sans Thai Looped', sans-serif;
+          font-family: 'Pattaya', sans-serif;
+          font-family: 'Sarabun', sans-serif;
+          font-family: 'Sriracha', cursive;
+          font-family: 'Taviraj', serif;"></button>
+        </div>
+        
+      
+    </div>
+
+    <p-table [value]="dataSource.data" [paginator]="true" [rows]="5" [responsive]="true" [style]="{'margin-top': '20px'}">
+      <ng-template pTemplate="header">
+        <tr>
+          <th >วันที่</th>
+          <th>ชื่อ-นามสกุล</th>
+          <th>หมายเลขสลาก</th>
+          <th>จำนวน</th>
+          <th>ราคา</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-purchaseDate >
+        <tr>
+          <td>{{ purchaseDate.created_at }}</td>
+          <td>{{ purchaseDate.first_name }} {{ purchaseDate.last_name }}</td>
+          <td>{{ purchaseDate.ticket_number }}</td>
+          <td>{{ purchaseDate.quantity }}</td>
+          <td>{{ purchaseDate.total_price }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+      <!-- แสดงข้อความ "ไม่พบผลลัพธ์" เมื่อไม่มีผลลัพธ์การค้นหา -->
+  <div *ngIf="!hasSearchResults" class="no-results-message">
+    ไม่พบผลลัพธ์
+  </div>
+    <!-- แสดงข้อความเมื่อมีผลลัพธ์การค้นหา -->
+    <div *ngIf="hasSearchResults" class="search-results-message">
+      พบผลลัพธ์ {{ dataSource.data.length }} รายการ
+    </div>
+  </div>
+</div>

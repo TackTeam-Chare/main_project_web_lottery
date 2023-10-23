@@ -1,0 +1,72 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@800;900&family=Noto+Sans+Thai:wght@300;400;900&display=swap');
+</style>
+<div class="fxLayout" id="div-body">
+<mat-card class="mat-card">
+  <mat-card-header>
+    <mat-card-title class="fxLayout" id="card-title"
+      style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif;">
+      <mat-icon>mood</mat-icon>
+      สมัครสมาชิก
+    </mat-card-title>
+    <mat-card-subtitle
+      style="
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Noto Sans Thai Looped', sans-serif;
+      ">กรุณาใส่ข้อมูลที่เป็นความจริง</mat-card-subtitle>
+  </mat-card-header>
+  <!-- ส่วนของแบบฟอร์ม -->
+  <div class="fxLayout" id="div-form">
+    <div class="fxLayout" id="div-form-field">
+     <mat-form-field appearance="outline">
+<mat-label>คำนำหน้า</mat-label>
+<mat-select name="prefix" required #prefixInput>
+  <mat-option value="นาย">นาย</mat-option>
+  <mat-option value="นางสาว">นางสาว</mat-option>
+  <mat-option value="นาง">นาง</mat-option>
+</mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+<mat-label>ชื่อจริง</mat-label>
+<input type="text" name="first_name" required matInput #firstNameInput />
+</mat-form-field>
+<mat-form-field appearance="outline">
+<mat-label>นามสกุล</mat-label>
+<input type="text" name="last_name" required matInput #lastNameInput />
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>อีเมล์</mat-label>
+  <input type="email" name="email" required matInput [(ngModel)]="email" #emailInput="ngModel" />
+  <!-- เพิ่มส่วนนี้เพื่อตรวจสอบความถูกต้องของอีเมล์ -->
+  <mat-error *ngIf="emailInput.invalid && emailInput.dirty">
+    กรุณากรอกอีเมล์ให้ถูกต้อง
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+<mat-label>รหัสผ่าน</mat-label>
+<input type="password" name="password"  required matInput #passwordInput />
+</mat-form-field>
+<mat-form-field appearance="outline">
+<mat-label>วัน/เดือน/ปี</mat-label>
+<input matInput [matDatepicker]="picker" required name="birthday" #birthdayInput />
+<mat-hint>MM/DD/YYYY</mat-hint>
+<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<mat-form-field appearance="outline">
+<mat-label>เบอร์โทร</mat-label>
+<input type="text" name="phone_number" required matInput #phoneInput />
+</mat-form-field>
+    </div>
+  </div>
+  
+  <mat-card-actions class="fxLayout" id="card-actions">
+    <button mat-flat-button class="signup-button" 
+      style="font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    " (click)="add( emailInput.value,passwordInput.value,prefixInput.value,firstNameInput.value,lastNameInput.value,birthdayInput.value,phoneInput.value)"><mat-icon>person_add</mat-icon> สมัครสมาชิก</button>
+  </mat-card-actions>
+</mat-card>
+</div>

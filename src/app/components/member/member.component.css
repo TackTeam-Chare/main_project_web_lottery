@@ -1,0 +1,15 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-elevation-z8 #text-span{
+    font-size: 1.5vw;
+  }
+  /* ตัวอย่าง CSS สำหรับ Badge */
+.mat-badge-content {
+  min-width: 20px; /* ปรับขนาดของ Badge ตามที่คุณต้องการ */
+  min-height: 20px;
+  font-size: 14px; /* ปรับขนาดตัวอักษร */
+  font-weight: bold;
+  border-radius: 50%; /* ทำให้ Badge เป็นวงกลม */
+  padding: 4px 8px; /* ปรับขนาดของ Badge ในกรณีที่มีตัวเลขหลายหลัก */
+}
